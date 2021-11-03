@@ -76,4 +76,4 @@ while(option != 9 ||   avatar.isDead()){
 
 }
 
-console.log('voce morreu')
+console.log('voce morreu HAHAHAHA')
