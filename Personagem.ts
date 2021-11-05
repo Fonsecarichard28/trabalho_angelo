@@ -1,5 +1,9 @@
+import { Util } from "./utill/util";
+
+
 //Nome, energia ,vida, ataque , defesa.
 //classe
+
 
 export class Personagem{
 
@@ -96,13 +100,11 @@ export class Personagem{
   }
 
  
-  private random(number:number, lastNumber:number): number{
-   return number + Math.round(Math.random()*lastNumber);
-  }
+  
 
   public treinarAtaque(): string{
-  this.ataque += this.random(1,5)
-  this.energia -= this.random(1,5) 
+  this.ataque += Util.random(1,5)
+  this.energia -=  Util.random(1,5) 
   this.level += 1;
 
  if (this.energia < 50){
@@ -115,8 +117,8 @@ export class Personagem{
 
   defender(): string{
     
-  this.defesa += this.random(1,5)
-  this.energia -= this.random(1,5) 
+  this.defesa += Util.random(1,5)
+  this.energia -=  Util.random(1,5) 
   this.level += 1;
   
 
@@ -166,11 +168,11 @@ export class Personagem{
 
   public batalha(): void{
       
-  let ataqueMonstro = this.random(50,150);;
+  let ataqueMonstro =  Util.random(50,150);;
   if(ataqueMonstro > this.defesa){
-    this.vida -= this.random(1,5);
-    this.energia -= this.random(1,5);
-    this.durabilidade -= this.random(1,5);
+    this.vida -=  Util.random(1,5);
+    this.energia -=  Util.random(1,5);
+    this.durabilidade -=  Util.random(1,5);
     this.level += 2;
     console.log('voce foi atacado')
     this.showStatus()
@@ -180,7 +182,7 @@ export class Personagem{
  }
  else{
   this.level += 2;
-  this.energia -= this.random(1,5);
+  this.energia -= Util.random(1,5);
   console.log('ESQUIVOU')
 
   this.showStatus()
@@ -191,7 +193,7 @@ export class Personagem{
 
 
   public batalhaChefe(): string {
-    let levelMonstro = this.random(80,150);
+    let levelMonstro = Util.random(80,150);
     if(this.level < levelMonstro )
     this.energia -= 20
 
