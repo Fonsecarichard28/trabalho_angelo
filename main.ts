@@ -1,19 +1,16 @@
 
 import prompt from  "prompt-sync"; 
+import { Demonio } from "./demonio";
+import { Fada } from "./fada";
+import { Humano } from "./humano";
 import { Personagem } from "./Personagem";
 
 let avatar: Personagem;
 
 let personagens = [
-
-  new Personagem("Meliodas","Demonio", 100, 200, 100,100,'Adaga',100,1),
-  new Personagem("Ban","Humano", 5, 5, 5,5,'Adaga',5,1),
-  new Personagem("Escanor","Humano", 20, 20, 20,20,'Adaga',20,1),
-  new Personagem("Merlin","Humano", 15, 15, 15,15,'Adaga',15,1),
-  new Personagem("Elisabeth","Humano", 25, 25, 25,25,'Adaga',25,1),
-  new Personagem("King","Fada", 30, 30, 30,30,'Adaga',30,1),
-  new Personagem("Diane","Gigante", 40, 40, 40,40,'Adaga',40,1),
-
+  new Humano('Ban', "Humano", "Espada"),
+  new Fada('King', 'fada', 'Martelo'),
+  new Demonio('Meliodas', 'Demonio', 'Espada')
 ];
 
 
@@ -40,7 +37,6 @@ while(option != 9 ||   avatar.isDead()){
   option = +teclado("Escolha  uma opção: ");
   
   
-
   if(option == 1){
     console.log(avatar.treinarAtaque());
 }
@@ -74,6 +70,8 @@ while(option != 9 ||   avatar.isDead()){
     avatar.batalhaChefe();
   }
 
+  else if(option == 9){
+    break;
+  }
 }
-
 console.log('voce morreu HAHAHAHA')

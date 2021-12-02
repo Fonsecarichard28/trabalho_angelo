@@ -6,6 +6,15 @@ import { Util } from "./utill/util";
 
 
 export class Personagem{
+  private _nome: string;
+  private _classe: string;
+  private _energia: number;
+  private _vida: number;
+  private _ataque: number;
+  private _defesa: number;
+  private _arma: string;
+  private _durabilidade: number;
+  private _level: number;
 
   public get level(): number {
     return this._level;
@@ -68,18 +77,16 @@ export class Personagem{
     return this._nome;
   }
  
-  constructor(
-      private _nome: string,
-      private _classe: string,
-      private _energia: number,
-      private _vida: number,
-      private _ataque: number,
-      private _defesa: number,
-      private _arma: string,
-      private _durabilidade: number,
-      private _level: number,
-
-      ){
+  constructor(nome: string, arma :string, classe : string){
+  this._classe = classe;
+  this._arma = arma;
+  this._nome = nome;
+  this._vida = Util.random(10, 100);
+  this._energia = Util.random(10, 100);
+  this._defesa = Util.random(10, 100);
+  this._level = Util.random(10, 100);
+  this._durabilidade = Util.random(10, 100);
+  this._ataque = Util.random(10, 100);
 
         
   }
@@ -114,6 +121,9 @@ export class Personagem{
   `Ataque atual do personagem: ${this.ataque}\n` +
   `Energia atual do personagem: ${this.energia}\n`)
   }
+
+
+  
 
   defender(): string{
     
