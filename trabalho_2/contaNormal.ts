@@ -17,7 +17,7 @@ export class ContaNormal extends ContaBancaria {
                         return;
                 }
                  this._saldo = this._saldo - valor;
-                 console.log(`${this._saldo}`)
+                 console.log(`${this._saldo.toFixed(2)}`)
         }
 
 

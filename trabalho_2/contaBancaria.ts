@@ -1,10 +1,12 @@
+import { Agencia } from "./agencia";
+import { ContaNormal } from "./contaNormal";
+
 export abstract class ContaBancaria {
         public _correntista: string;
         public _saldo: number;
         public toString = () : string => {
                 return (
                         `Correntista da conta ${this._correntista}\n` +
-                        `Saldo da conta ${this._saldo}\n` +
                         '\n' +
                         '\n' +
 
@@ -18,7 +20,7 @@ export abstract class ContaBancaria {
         }
 
 
-        public abstract valorDisponivel(): string;
+        public abstract valorDisponivel(): void;
 
         public abstract saque(valor : number): void;
 

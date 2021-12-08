@@ -15,6 +15,8 @@ export class Agencia {
     ];
 
 
+
+
     constructor() {
 
         this._codigo = 100;
@@ -29,6 +31,8 @@ export class Agencia {
             '||| 2 - Excluir Conta Bancaria |||\n' +
             '||| 3 - Listar contas bancarias |||\n' +
             '||| 4 - Valor  disponivel nas contas |||\n' +
+            '||| 5 - Realizar  saque |||\n' +
+
 
             '\n' +
             '\n' +
@@ -36,7 +40,6 @@ export class Agencia {
     }
 
 
-    
 
     public adicionarContaBancaria(contaBancaria : ContaBancaria): void {
         this.contas.push(contaBancaria)
